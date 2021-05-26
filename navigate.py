@@ -15,7 +15,10 @@ grid = Grid(matrix = maze)
 start = grid.node(32, 4)
 end = grid.node(3, 1)
 
+# Create Pathfinder object instance, execute.
 finder = AStarFinder(diagonal_movement = DiagonalMovement.always)
 path, runs = finder.find_path(start, end, grid)
 
+# Print results.
+print('Computational Steps:', runs)
 print(grid.grid_str(path=path, start=start, end = end))
